@@ -33,10 +33,10 @@ require("lazy").setup({
   },
   },
   {
-    "rebelot/kanagawa.nvim",
-    name = "kanagawa",
+    "catppuccin/nvim",
+    name = "catppuccin",
       config = function()
-	vim.cmd("colorscheme kanagawa")
+	vim.cmd("colorscheme catppuccin-frappe")
       end,
   },
   {

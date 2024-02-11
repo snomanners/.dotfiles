@@ -66,6 +66,9 @@ local servers = {
       -- diagnostics = { disable = { 'missing-fields' } },
     },
   },
+  phpactor = {},
+  pyright = {},
+  tsserver = {},
 }
 
 -- Setup neovim lua configuration
