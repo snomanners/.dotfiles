@@ -93,6 +93,13 @@ require("lazy").setup({
         'nvim-treesitter/nvim-treesitter',
         build = ':TSUpdate',
     },
+    {
+        'windwp/nvim-autopairs',
+        event = "InsertEnter",
+        config = true
+        -- use opts = {} for passing setup options
+        -- this is equalent to setup({}) function
+    },
 }, {})
 
 -- ### Default plugins setups ###

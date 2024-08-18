@@ -66,7 +66,6 @@ local servers = {
             -- diagnostics = { disable = { 'missing-fields' } },
         },
     },
-    gopls = {},
 }
 
 -- Setup neovim lua configuration
