@@ -5,15 +5,25 @@ require("lazy").setup({
         dependencies = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim", "nvim-tree/nvim-web-devicons" }
     },
     {
-        'stevearc/conform.nvim',
+        'stevearc/oil.nvim',
+        ---@module 'oil'
+        ---@type oil.SetupOpts
         opts = {},
+        -- Optional dependencies
+        dependencies = { { "echasnovski/mini.icons", opts = {} } },
+        -- dependencies = { "nvim-tree/nvim-web-devicons" }, -- use if prefer nvim-web-devicons
     },
-    'folke/zen-mode.nvim',
     'numToStr/Comment.nvim',
     'lewis6991/gitsigns.nvim',
     'nvim-lualine/lualine.nvim',
     'mbbill/undotree',
     'tpope/vim-fugitive',
+    'tpope/vim-sleuth',
+    {
+        'ThePrimeagen/harpoon',
+        branch = "harpoon2",
+        dependencies = { 'nvim-lua/plenary.nvim'}
+    },
     {
         'nvim-telescope/telescope.nvim',
         tag = '0.1.5',

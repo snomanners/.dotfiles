@@ -17,8 +17,6 @@ pcall(require('telescope').load_extension, 'fzf')
 
 vim.keymap.set('n', '<leader>u', vim.cmd.UndotreeToggle)
 
-vim.keymap.set('n', '<leader>z', ":ZenMode<CR>", {})
-
 vim.keymap.set("n", "<leader>q", function() require("trouble").toggle("quickfix") end)
 vim.keymap.set("n", "<leader>e", function() require("trouble").toggle() end)
 
@@ -29,4 +27,16 @@ vim.api.nvim_set_keymap(
     { noremap = true }
 )
 
-vim.api.nvim_set_keymap("n", "<Leader>af", ":lua require('neogen').generate()<CR>", { noremap = true, silent = true })
+-- Harpoon keymaps
+
+vim.keymap.set('n', '<leader>h', function() require("harpoon"):list():add() end)
+vim.keymap.set('n', 'hl', function() local harpoon = require("harpoon") harpoon.ui:toggle_quick_menu(harpoon:list()) end)
+vim.keymap.set('n', 'ha', function() require("harpoon"):list():select(1) end)
+vim.keymap.set('n', 'hs', function() require("harpoon"):list():select(2) end)
+vim.keymap.set('n', 'hd', function() require("harpoon"):list():select(3) end)
+vim.keymap.set('n', 'hf', function() require("harpoon"):list():select(4) end)
+vim.keymap.set('n', 'hg', function() require("harpoon"):list():select(5) end)
+
+-- Oil keymaps
+
+vim.keymap.set('n', '<leader>o', ':Oil --float<CR>')

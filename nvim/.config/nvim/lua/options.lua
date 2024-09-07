@@ -6,6 +6,9 @@ vim.o.scrolloff = 8
 -- disable mouse
 vim.opt.mouse = ""
 
+-- Show line length threshold
+vim.opt.colorcolumn = "80"
+
 vim.opt.tabstop = 4
 vim.opt.softtabstop = 4
 vim.opt.shiftwidth = 4
@@ -25,7 +28,7 @@ vim.o.ignorecase = true
 vim.o.smartcase = true
 
 -- Signcolumn to show info on lines, don't know exactly if needed. Check out later
-vim.wo.signcolumn = 'yes'
+vim.opt.signcolumn = 'yes'
 
 -- Decrease update time, check if this is alright later
 vim.o.updatetime = 750
@@ -36,7 +39,6 @@ vim.o.completeopt = 'menuone,noselect'
 
 -- Netrw options
 vim.g.netrw_banner = 0
-vim.g.netrw_browse_split = 4
 vim.g.netrw_liststyle = 3
 vim.g.netrw_winsize = -28
 
