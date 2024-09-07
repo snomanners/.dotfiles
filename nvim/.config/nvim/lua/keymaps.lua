@@ -30,12 +30,12 @@ vim.api.nvim_set_keymap(
 -- Harpoon keymaps
 
 vim.keymap.set('n', '<leader>h', function() require("harpoon"):list():add() end)
-vim.keymap.set('n', 'hl', function() local harpoon = require("harpoon") harpoon.ui:toggle_quick_menu(harpoon:list()) end)
-vim.keymap.set('n', 'ha', function() require("harpoon"):list():select(1) end)
-vim.keymap.set('n', 'hs', function() require("harpoon"):list():select(2) end)
-vim.keymap.set('n', 'hd', function() require("harpoon"):list():select(3) end)
-vim.keymap.set('n', 'hf', function() require("harpoon"):list():select(4) end)
-vim.keymap.set('n', 'hg', function() require("harpoon"):list():select(5) end)
+vim.keymap.set('n', '<leader>hl', function() local harpoon = require("harpoon") harpoon.ui:toggle_quick_menu(harpoon:list()) end)
+vim.keymap.set('n', '<leader>ha', function() require("harpoon"):list():select(1) end)
+vim.keymap.set('n', '<leader>hs', function() require("harpoon"):list():select(2) end)
+vim.keymap.set('n', '<leader>hd', function() require("harpoon"):list():select(3) end)
+vim.keymap.set('n', '<leader>hf', function() require("harpoon"):list():select(4) end)
+vim.keymap.set('n', '<leader>hg', function() require("harpoon"):list():select(5) end)
 
 -- Oil keymaps
 
