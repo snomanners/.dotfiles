@@ -1,10 +1,6 @@
 -- Here we define all the plugins we will need
 require("lazy").setup({
     {
-        "nvim-telescope/telescope-file-browser.nvim",
-        dependencies = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim", "nvim-tree/nvim-web-devicons" }
-    },
-    {
         'stevearc/oil.nvim',
         ---@module 'oil'
         ---@type oil.SetupOpts
@@ -18,7 +14,9 @@ require("lazy").setup({
     'nvim-lualine/lualine.nvim',
     'mbbill/undotree',
     'tpope/vim-fugitive',
+    'stevearc/dressing.nvim',
     'tpope/vim-sleuth',
+    'nyoom-engineering/oxocarbon.nvim',
     {
         'ThePrimeagen/harpoon',
         branch = "harpoon2",
@@ -26,35 +24,12 @@ require("lazy").setup({
     },
     {
         'nvim-telescope/telescope.nvim',
-        tag = '0.1.5',
         dependencies = { 'nvim-lua/plenary.nvim' },
-        extensions = {
-            file_browser = {
-                theme = "ivy",
-                -- disables netrw and use telescope-file-browser in its place
-                hijack_netrw = true,
-                mappings = {
-                    ["i"] = {
-                        -- your custom insert mode mappings
-                    },
-                    ["n"] = {
-                        -- your custom normal mode mappings
-                    },
-                },
-            },
-        },
     },
     {
         "folke/trouble.nvim",
         dependencies = { "nvim-tree/nvim-web-devicons" },
         opts = {},
-    },
-    {
-        "rose-pine/neovim",
-        name = "rose-pine",
-        config = function()
-            vim.cmd("colorscheme rose-pine")
-        end,
     },
     {
         -- LSP Configuration & Plugins

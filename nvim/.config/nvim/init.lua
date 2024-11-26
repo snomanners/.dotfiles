@@ -9,6 +9,8 @@ require 'options'
 
 require 'keymaps'
 
+require 'telescope-setup'
+
 require 'treesitter-setup'
 
 require 'lsp'
@@ -16,3 +18,5 @@ require 'lsp'
 require 'cmp-setup'
 
 require 'lualine-setup'
+
+vim.cmd("colorscheme oxocarbon")
