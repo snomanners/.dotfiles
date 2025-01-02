@@ -24,13 +24,6 @@ end
 require('mason').setup()
 require('mason-lspconfig').setup()
 local servers = {
-    rust_analyzer = {
-        ["rust-analyzer"] = {
-            check = {
-                command = "clippy",
-            },
-        },
-    },
     lua_ls = {
         Lua = {
             workspace = { checkThirdParty = false },
@@ -42,10 +35,8 @@ local servers = {
 -- Setup neovim lua configuration
 require('neodev').setup()
 
--- nvim-cmp supports additional completion capabilities, so broadcast that to servers
-local capabilities = vim.lsp.protocol.make_client_capabilities()
-capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
 
+capabilities = require('blink.cmp').get_lsp_capabilities()
 -- Ensure the servers above are installed
 local mason_lspconfig = require 'mason-lspconfig'
 

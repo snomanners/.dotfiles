@@ -5,18 +5,18 @@ require("lazy").setup({
         ---@module 'oil'
         ---@type oil.SetupOpts
         opts = {},
-        -- Optional dependencies
         dependencies = { { "echasnovski/mini.icons", opts = {} } },
-        -- dependencies = { "nvim-tree/nvim-web-devicons" }, -- use if prefer nvim-web-devicons
     },
     'numToStr/Comment.nvim',
     'lewis6991/gitsigns.nvim',
     'nvim-lualine/lualine.nvim',
     'mbbill/undotree',
     'tpope/vim-fugitive',
-    'stevearc/dressing.nvim',
     'tpope/vim-sleuth',
-    'nyoom-engineering/oxocarbon.nvim',
+    'aktersnurra/no-clown-fiesta.nvim',
+    'slugbyte/lackluster.nvim',
+    'Yazeed1s/oh-lucy.nvim',
+    'ramojus/mellifluous.nvim',
     {
         'ThePrimeagen/harpoon',
         branch = "harpoon2",
@@ -35,6 +35,7 @@ require("lazy").setup({
         -- LSP Configuration & Plugins
         'neovim/nvim-lspconfig',
         dependencies = {
+            'saghen/blink.cmp',
             -- Mason is just too beautiful not to incude
             { 'williamboman/mason.nvim', config = true },
             'williamboman/mason-lspconfig.nvim',
@@ -47,31 +48,9 @@ require("lazy").setup({
         },
     },
     {
-        -- Autocompletion
-        'hrsh7th/nvim-cmp',
-        dependencies = {
-            -- Snippet Engine & its associated nvim-cmp source
-            {
-                'L3MON4D3/LuaSnip',
-                build = (function()
-                    -- Build Step is needed for regex support in snippets
-                    -- This step is not supported in many windows environments
-                    -- Remove the below condition to re-enable on windows
-                    if vim.fn.has 'win32' == 1 then
-                        return
-                    end
-                    return 'make install_jsregexp'
-                end)(),
-            },
-            'saadparwaiz1/cmp_luasnip',
-
-            -- Adds LSP completion capabilities
-            'hrsh7th/cmp-nvim-lsp',
-            'hrsh7th/cmp-path',
-
-            -- Adds a number of user-friendly snippets
-            'rafamadriz/friendly-snippets',
-        },
+      'saghen/blink.cmp',
+      dependencies = 'rafamadriz/friendly-snippets',
+      version = '*',
     },
     {
         -- Highlight, edit, and navigate code
@@ -82,8 +61,6 @@ require("lazy").setup({
         'windwp/nvim-autopairs',
         event = "InsertEnter",
         config = true
-        -- use opts = {} for passing setup options
-        -- this is equalent to setup({}) function
     },
 }, {})
 

@@ -13,10 +13,10 @@ require 'telescope-setup'
 
 require 'treesitter-setup'
 
-require 'lsp'
+require 'blink-setup'
 
-require 'cmp-setup'
+require 'lsp'
 
 require 'lualine-setup'
 
-vim.cmd("colorscheme oxocarbon")
+vim.cmd("colorscheme no-clown-fiesta")
