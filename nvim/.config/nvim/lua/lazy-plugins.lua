@@ -6,30 +6,34 @@ require("lazy").setup({
         ---@type oil.SetupOpts
         opts = {},
         dependencies = { { "echasnovski/mini.icons", opts = {} } },
+        event = "VeryLazy",
     },
-    'numToStr/Comment.nvim',
     'lewis6991/gitsigns.nvim',
-    'nvim-lualine/lualine.nvim',
+    {
+        'nvim-lualine/lualine.nvim',
+        lazy = false,
+        priority = 1000,
+    },
     'mbbill/undotree',
-    'tpope/vim-fugitive',
     'tpope/vim-sleuth',
-    'aktersnurra/no-clown-fiesta.nvim',
-    'slugbyte/lackluster.nvim',
-    'Yazeed1s/oh-lucy.nvim',
-    'ramojus/mellifluous.nvim',
+    {
+        'aktersnurra/no-clown-fiesta.nvim',
+        lazy = false,
+        priority = 1000,
+    },
+    -- 'slugbyte/lackluster.nvim',
+    -- 'Yazeed1s/oh-lucy.nvim',
+    -- 'ramojus/mellifluous.nvim',
     {
         'ThePrimeagen/harpoon',
         branch = "harpoon2",
-        dependencies = { 'nvim-lua/plenary.nvim'}
+        dependencies = { 'nvim-lua/plenary.nvim'},
+        event = "VeryLazy",
     },
     {
         'nvim-telescope/telescope.nvim',
         dependencies = { 'nvim-lua/plenary.nvim' },
-    },
-    {
-        "folke/trouble.nvim",
-        dependencies = { "nvim-tree/nvim-web-devicons" },
-        opts = {},
+        lazy = true,
     },
     {
         -- LSP Configuration & Plugins
@@ -48,9 +52,11 @@ require("lazy").setup({
         },
     },
     {
-      'saghen/blink.cmp',
-      dependencies = 'rafamadriz/friendly-snippets',
-      version = '*',
+        'saghen/blink.cmp',
+        dependencies = 'rafamadriz/friendly-snippets',
+        version = '*',
+        lazy = false,
+        priority = 1000,
     },
     {
         -- Highlight, edit, and navigate code
@@ -65,5 +71,4 @@ require("lazy").setup({
 }, {})
 
 -- ### Default plugins setups ###
-require('Comment').setup()
 require('gitsigns').setup()

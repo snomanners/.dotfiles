@@ -1,6 +1,3 @@
--- no inline errors
-vim.diagnostic.config({virtual_text = false})
-
 vim.o.termguicolors = true
 vim.o.hlsearch = false
 
