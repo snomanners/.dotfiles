@@ -19,4 +19,6 @@ require 'lsp'
 
 require 'lualine-setup'
 
-vim.cmd("colorscheme no-clown-fiesta")
+require 'lackluster-setup'
+
+vim.cmd("colorscheme lackluster-mint")

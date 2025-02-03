@@ -10,9 +10,37 @@ require("lazy").setup({
     },
     'lewis6991/gitsigns.nvim',
     {
+        'slugbyte/lackluster.nvim',
+        lazy = false,
+        priority = 1000,
+        tweak_color = {
+            lack = "#73d0ff",
+            special = "#e38655"
+        },
+    },
+    {
+        "folke/todo-comments.nvim",
+        dependencies = { "nvim-lua/plenary.nvim" },
+        opts = {},
+    },
+    {
         'nvim-lualine/lualine.nvim',
         lazy = false,
         priority = 1000,
+    },
+    {
+        'stevearc/conform.nvim',
+        opts = {},
+        keys = {
+            {
+                "<leader>f",
+                function()
+                    require("conform").format({ async = true, lsp_fallback = true })
+                end,
+                mode = "",
+                desc = "Format buffer",
+            }
+        },
     },
     'mbbill/undotree',
     'tpope/vim-sleuth',
@@ -27,7 +55,7 @@ require("lazy").setup({
     {
         'ThePrimeagen/harpoon',
         branch = "harpoon2",
-        dependencies = { 'nvim-lua/plenary.nvim'},
+        dependencies = { 'nvim-lua/plenary.nvim' },
         event = "VeryLazy",
     },
     {
@@ -61,6 +89,7 @@ require("lazy").setup({
     {
         -- Highlight, edit, and navigate code
         'nvim-treesitter/nvim-treesitter',
+        dependencies = 'nvim-treesitter/nvim-treesitter-textobjects',
         build = ':TSUpdate',
     },
     {
