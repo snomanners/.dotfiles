@@ -10,6 +10,11 @@ require("lazy").setup({
     },
     'lewis6991/gitsigns.nvim',
     {
+        'EdenEast/nightfox.nvim',
+        lazy = false,
+        priority = 1000,
+    },
+    {
         'slugbyte/lackluster.nvim',
         lazy = false,
         priority = 1000,
@@ -44,14 +49,6 @@ require("lazy").setup({
     },
     'mbbill/undotree',
     'tpope/vim-sleuth',
-    {
-        'aktersnurra/no-clown-fiesta.nvim',
-        lazy = false,
-        priority = 1000,
-    },
-    -- 'slugbyte/lackluster.nvim',
-    -- 'Yazeed1s/oh-lucy.nvim',
-    -- 'ramojus/mellifluous.nvim',
     {
         'ThePrimeagen/harpoon',
         branch = "harpoon2",

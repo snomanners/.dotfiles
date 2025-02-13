@@ -21,4 +21,4 @@ require 'lualine-setup'
 
 require 'lackluster-setup'
 
-vim.cmd("colorscheme lackluster-mint")
+vim.cmd("colorscheme carbonfox")
