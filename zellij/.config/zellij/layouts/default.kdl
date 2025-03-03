@@ -1,0 +1,30 @@
+layout {
+    tab name="nvim" focus=true {
+        pane
+        pane size=1 borderless=true {
+            plugin location="zellij:tab-bar"
+            plugin location="zellij:status-bar"
+        }
+    }
+    tab name="compile" {
+        pane
+        pane size=1 borderless=true {
+            plugin location="zellij:tab-bar"
+            plugin location="zellij:status-bar"
+        }
+    }
+    tab name="git" {
+        pane
+        pane size=1 borderless=true {
+            plugin location="zellij:tab-bar"
+            plugin location="zellij:status-bar"
+        }
+    }
+    tab name="other" {
+        pane
+        pane size=1 borderless=true {
+            plugin location="zellij:tab-bar"
+            plugin location="zellij:status-bar"
+        }
+    }
+}

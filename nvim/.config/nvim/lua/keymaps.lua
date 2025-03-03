@@ -35,11 +35,3 @@ vim.keymap.set('n', '<leader>o', ':Oil --float<CR>')
 -- Todo keymaps
 
 vim.keymap.set('n', '<leader>t', ':TodoTelescope<CR>')
-
-vim.keymap.set('', '<leader>bl', function()
-  vim.diagnostic.config({
-    virtual_lines = not vim.diagnostic.config().virtual_lines,
-    virtual_text = not vim.diagnostic.config().virtual_text, 
-  })
-end, { desc = 'Toggle diagnostic [l]ines' })
-
