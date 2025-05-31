@@ -2,6 +2,10 @@ require('telescope').setup {
   pickers = {
     buffers = {
       theme = "dropdown",
+    },
+    diagnostics = {
+      theme = "dropdown",
+      previewer = false,
     }
   }
 }
