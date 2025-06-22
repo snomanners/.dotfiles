@@ -1,4 +1,5 @@
 vim.o.termguicolors = true
+vim.o.background = 'dark'
 vim.o.hlsearch = false
 
 vim.o.scrolloff = 8

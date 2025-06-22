@@ -9,8 +9,6 @@ require 'options'
 
 require 'keymaps'
 
-require 'telescope-setup'
-
 require 'treesitter-setup'
 
 require 'blink-setup'

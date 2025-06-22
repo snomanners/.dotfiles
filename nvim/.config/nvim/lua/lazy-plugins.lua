@@ -9,6 +9,14 @@ require("lazy").setup({
         event = "VeryLazy",
     },
     {
+        "ibhagwan/fzf-lua",
+        -- optional for icon support
+        dependencies = { "nvim-tree/nvim-web-devicons" },
+        -- or if using mini.icons/mini.nvim
+        -- dependencies = { "echasnovski/mini.icons" },
+        opts = {}
+    },
+    {
         "rachartier/tiny-inline-diagnostic.nvim",
         event = "VeryLazy", -- Or `LspAttach`
         priority = 1000, -- needs to be loaded in first
@@ -63,11 +71,6 @@ require("lazy").setup({
         branch = "harpoon2",
         dependencies = { 'nvim-lua/plenary.nvim' },
         event = "VeryLazy",
-    },
-    {
-        'nvim-telescope/telescope.nvim',
-        dependencies = { 'nvim-lua/plenary.nvim' },
-        lazy = true,
     },
     {
         -- LSP Configuration & Plugins

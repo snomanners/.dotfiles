@@ -8,12 +8,12 @@ local on_attach = function(_, bufnr)
         vim.lsp.buf.code_action { context = { only = { 'quickfix', 'refactor', 'source' } } }
     end, opt)
 
-    vim.keymap.set('n', 'gd', require('telescope.builtin').lsp_definitions, opt)
-    vim.keymap.set('n', 'gr', require('telescope.builtin').lsp_references, opt)
-    vim.keymap.set('n', 'gI', require('telescope.builtin').lsp_implementations, opt)
-    vim.keymap.set('n', '<leader>D', require('telescope.builtin').lsp_type_definitions, opt)
-    vim.keymap.set('n', '<leader>ds', require('telescope.builtin').lsp_document_symbols, opt)
-    vim.keymap.set('n', '<leader>ws', require('telescope.builtin').lsp_dynamic_workspace_symbols, opt)
+    vim.keymap.set('n', 'gd', require('fzf-lua').lsp_definitions, opt)
+    vim.keymap.set('n', 'gr', require('fzf-lua').lsp_references, opt)
+    vim.keymap.set('n', 'gI', require('fzf-lua').lsp_implementations, opt)
+    vim.keymap.set('n', '<leader>D', require('fzf-lua').lsp_type_definitions, opt)
+    vim.keymap.set('n', '<leader>ds', require('fzf-lua').lsp_document_symbols, opt)
+    vim.keymap.set('n', '<leader>ws', require('fzf-lua').lsp_dynamic_workspace_symbols, opt)
 
     vim.keymap.set('n', 'K', vim.lsp.buf.hover, opt)
     vim.keymap.set('n', '<C-k>', vim.lsp.buf.signature_help, opt)
