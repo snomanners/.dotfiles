@@ -24,7 +24,7 @@ require("lazy").setup({
     },
     'lewis6991/gitsigns.nvim',
     {
-        'EdenEast/nightfox.nvim',
+        "dgox16/oldworld.nvim",
         lazy = false,
         priority = 1000,
     },

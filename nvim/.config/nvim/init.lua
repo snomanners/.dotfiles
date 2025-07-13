@@ -1,3 +1,11 @@
+vim.api.nvim_create_autocmd("FileType", {
+    pattern = {"html", "css", "javascript", "typescript", "svelte"},
+    callback = function()
+        vim.opt.shiftwidth = 2
+        vim.opt.tabstop = 2
+    end,
+})
+
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
@@ -19,4 +27,4 @@ require 'lualine-setup'
 
 require 'lackluster-setup'
 
-vim.cmd("colorscheme carbonfox")
+vim.cmd("colorscheme oldworld")
