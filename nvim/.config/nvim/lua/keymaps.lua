@@ -33,4 +33,4 @@ vim.keymap.set('n', '<leader>hg', function() require("harpoon"):list():select(5)
 
 -- Oil keymaps
 
-vim.keymap.set('n', '<leader>o', ':Oil --float<CR>')
+vim.keymap.set('n', '<leader>o', require('oil').toggle_float)

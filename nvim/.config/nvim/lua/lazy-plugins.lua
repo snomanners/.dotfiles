@@ -9,14 +9,25 @@ require("lazy").setup({
         event = "VeryLazy",
     },
     {
+        "folke/flash.nvim",
+        event = "VeryLazy",
+        ---@type Flash.Config
+        opts = {},
+        -- stylua: ignore
+        keys = {
+            { "s", mode = { "n", "x", "o" }, function() require("flash").jump() end,       desc = "Flash" },
+            { "S", mode = { "n", "x", "o" }, function() require("flash").treesitter() end, desc = "Flash Treesitter" },
+        },
+    },
+    {
         "ibhagwan/fzf-lua",
         dependencies = { "nvim-tree/nvim-web-devicons" },
-        lazy=true,
+        lazy = true,
     },
     {
         "rachartier/tiny-inline-diagnostic.nvim",
         event = "VeryLazy", -- Or `LspAttach`
-        priority = 1000, -- needs to be loaded in first
+        priority = 1000,    -- needs to be loaded in first
         config = function()
             require('tiny-inline-diagnostic').setup()
             vim.diagnostic.config({ virtual_text = false }) -- Only if needed in your configuration, if you already have native LSP diagnostics
@@ -27,15 +38,6 @@ require("lazy").setup({
         "dgox16/oldworld.nvim",
         lazy = false,
         priority = 1000,
-    },
-    {
-        'slugbyte/lackluster.nvim',
-        lazy = false,
-        priority = 1000,
-        tweak_color = {
-            lack = "#73d0ff",
-            special = "#e38655"
-        },
     },
     {
         "folke/todo-comments.nvim",
