@@ -1,0 +1,49 @@
+let mapleader=" "
+
+set scrolloff=5
+set incsearch
+set clipboard+=unnamed
+set clipboard+=ideaput
+
+" key remaps
+noremap U <C-r>
+map <TAB> <Action>(PreviousTab)
+map <s-TAB> <Action>(NextTab)
+map <leader>z <Action>(ToggleDistractionFreeMode)
+map <leader>n <Action>(NextWindow)
+map <leader>x <Action>(CloseContent)
+map <leader>q <Action>(CloseAllEditors)
+
+map gi <Action>(GotoImplementation)
+map gd <Action>(GotoDeclaration)
+map gp <Action>(GotoSuperMethod)
+map gt <Action>(GotoTest)
+
+" Splits remaps
+map <C-v> <Action>(SplitVertically)
+map <C-h> <Action>(SplitHorizontally)
+map <C--> <Action>(Unsplit)
+" Set vim as the handler for these so we don't get the popups
+sethandler <C-j> a:vim
+sethandler <C-k> a:vim
+nnoremap <C-h> <C-w>h
+nnoremap <C-l> <C-w>l
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+
+" Remaps for finding stuff
+map <leader>pf <Action>(GotoFile)
+map <leader>pc <Action>(GotoClass)
+map <leader>ps <Action>(GotoSymbol)
+
+" Fix these
+map <leader>t <Action>(Terminal.OpenInTerminal)
+map <C-t> <Action>(ActivateTerminalToolWindow)
+
+map <leader>d <Action>(Debug)
+
+map <leader>f <Action>(ReformatCode)
+" Extra plugins we may want to use
+Plug 'machakann/vim-highlightedyank'
+Plug 'tpope/vim-commentary'
+Plug 'justinmk/vim-sneak'

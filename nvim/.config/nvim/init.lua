@@ -25,6 +25,4 @@ require 'lsp'
 
 require 'lualine-setup'
 
-require 'lackluster-setup'
-
 vim.cmd("colorscheme oldworld")
