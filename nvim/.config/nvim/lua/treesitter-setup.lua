@@ -1,6 +1,6 @@
 -- Treesitter setup from kickstart, see if everything needed is here
 vim.defer_fn(function()
-  require('nvim-treesitter.configs').setup {
+  require('nvim-treesitter').setup {
     -- Add languages to be installed here that you want installed for treesitter
     ensure_installed = { 'lua', 'python', 'rust', 'javascript', 'typescript', 'vimdoc', 'vim', 'markdown'},
 
@@ -8,18 +8,6 @@ vim.defer_fn(function()
     sync_install = false,
     highlight = { enable = true },
     indent = { enable = true },
-    
-    textobjects = {
-      select = {
-        enable = true,
-        lookahead = true,
-
-        keymaps = {
-          ["af"] = "@function.outer",
-          ["if"] = "@function.inner",
-        }
-      }
-    }
   }
 end, 0)
 

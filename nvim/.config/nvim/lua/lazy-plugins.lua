@@ -27,7 +27,7 @@ require("lazy").setup({
     {
         "rachartier/tiny-inline-diagnostic.nvim",
         event = "VeryLazy", -- Or `LspAttach`
-        priority = 1000,    -- needs to be loaded in first
+        priority = 1000,
         config = function()
             require('tiny-inline-diagnostic').setup()
             vim.diagnostic.config({ virtual_text = false }) -- Only if needed in your configuration, if you already have native LSP diagnostics
@@ -63,7 +63,6 @@ require("lazy").setup({
             }
         },
     },
-    'mbbill/undotree',
     'tpope/vim-sleuth',
     {
         'ThePrimeagen/harpoon',
@@ -75,8 +74,6 @@ require("lazy").setup({
         -- LSP Configuration & Plugins
         'neovim/nvim-lspconfig',
         dependencies = {
-            'saghen/blink.cmp',
-            -- Mason is just too beautiful not to incude
             { 'williamboman/mason.nvim', config = true },
             'williamboman/mason-lspconfig.nvim',
 
@@ -97,7 +94,6 @@ require("lazy").setup({
     {
         -- Highlight, edit, and navigate code
         'nvim-treesitter/nvim-treesitter',
-        dependencies = 'nvim-treesitter/nvim-treesitter-textobjects',
         build = ':TSUpdate',
     },
     {
