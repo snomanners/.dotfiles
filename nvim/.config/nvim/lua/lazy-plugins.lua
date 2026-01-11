@@ -34,11 +34,7 @@ require("lazy").setup({
         end
     },
     'lewis6991/gitsigns.nvim',
-    {
-        "dgox16/oldworld.nvim",
-        lazy = false,
-        priority = 1000,
-    },
+    'dgox16/oldworld.nvim',
     {
         "folke/todo-comments.nvim",
         dependencies = { "nvim-lua/plenary.nvim" },
@@ -54,7 +50,7 @@ require("lazy").setup({
         opts = {},
         keys = {
             {
-                "<leader>f",
+                "<leader>a",
                 function()
                     require("conform").format({ async = true, lsp_fallback = true })
                 end,
@@ -94,6 +90,8 @@ require("lazy").setup({
     {
         -- Highlight, edit, and navigate code
         'nvim-treesitter/nvim-treesitter',
+        branch="main",
+        lazy = false,
         build = ':TSUpdate',
     },
     {

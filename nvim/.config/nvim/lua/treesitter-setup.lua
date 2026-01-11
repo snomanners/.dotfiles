@@ -1,14 +1,25 @@
--- Treesitter setup from kickstart, see if everything needed is here
 vim.defer_fn(function()
-  require('nvim-treesitter').setup {
-    -- Add languages to be installed here that you want installed for treesitter
-    ensure_installed = { 'lua', 'python', 'rust', 'javascript', 'typescript', 'vimdoc', 'vim', 'markdown'},
+  -- Install does not run if all languages installed
+  local languages = { 'lua', 'python', 'odin', 'javascript', 'typescript', 'vimdoc', 'vim'}
+  require('nvim-treesitter').install(languages)
 
-    auto_install = true,
-    sync_install = false,
-    highlight = { enable = true },
-    indent = { enable = true },
-  }
+  -- Finally got it working through the docs at https://github.com/MeanderingProgrammer/treesitter-modules.nvim
+  vim.api.nvim_create_autocmd('FileType', {
+    group = vim.api.nvim_create_augroup('treesitter.setup', {}),
+    callback = function(args)
+      local buf = args.buf
+      local filetype = args.match
+
+      local language = vim.treesitter.language.get_lang(filetype) or filetype
+      if not vim.treesitter.language.add(language) then
+        return
+      end
+
+      vim.treesitter.start(buf, language)
+      vim.wo.foldexpr = 'v:lua.vim.treesitter.foldexpr()'
+      vim.wo.foldmethod = 'expr'
+
+      vim.bo[buf].indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
+    end
+  })
 end, 0)
-
--- vim: ts=2 sts=2 sw=2 et

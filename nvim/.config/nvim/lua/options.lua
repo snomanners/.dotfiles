@@ -33,5 +33,8 @@ vim.o.timeoutlen = 300
 -- Set completeopt to have a better completion experience
 vim.o.completeopt = 'menuone,noselect'
 
+-- We want files to open with no folds closed
+vim.o.foldlevelstart = 99
+
 -- Remove tilde symbols
 vim.opt.fillchars:append({ eob = " " })
