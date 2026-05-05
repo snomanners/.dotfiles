@@ -1,16 +1,17 @@
 vim.api.nvim_create_autocmd('TextYankPost', {
     callback = function()
-        vim.highlight.on_yank()
+        vim.hl.on_yank()
     end,
     group = highlight_group,
-    pattern = '*',
 })
 
+vim.keymap.set('n', 'H', '^')
+vim.keymap.set('n', 'L', '$')
 vim.keymap.set('n', '<C-h>', '<C-w>h')
 vim.keymap.set('n', '<C-j>', '<C-w>j')
 vim.keymap.set('n', '<C-k>', '<C-w>k')
 vim.keymap.set('n', '<C-l>', '<C-w>l')
-vim.keymap.set('n', '<leader>x', ':close<CR>')
+vim.keymap.set('n', '<leader>sk', ':close<CR>')
 vim.keymap.set('n', '<leader>ss', ':vsplit<CR>')
 vim.keymap.set('n', '<leader>sh', ':split<CR>')
 

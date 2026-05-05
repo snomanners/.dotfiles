@@ -9,6 +9,10 @@ require("lazy").setup({
         event = "VeryLazy",
     },
     {
+        'nvim-lualine/lualine.nvim',
+        dependencies = { 'nvim-tree/nvim-web-devicons' }
+    },
+    {
         "folke/flash.nvim",
         event = "VeryLazy",
         ---@type Flash.Config
@@ -24,26 +28,12 @@ require("lazy").setup({
         dependencies = { "nvim-tree/nvim-web-devicons" },
         lazy = true,
     },
-    {
-        "rachartier/tiny-inline-diagnostic.nvim",
-        event = "VeryLazy", -- Or `LspAttach`
-        priority = 1000,
-        config = function()
-            require('tiny-inline-diagnostic').setup()
-            vim.diagnostic.config({ virtual_text = false }) -- Only if needed in your configuration, if you already have native LSP diagnostics
-        end
-    },
     'lewis6991/gitsigns.nvim',
     'dgox16/oldworld.nvim',
     {
         "folke/todo-comments.nvim",
         dependencies = { "nvim-lua/plenary.nvim" },
         opts = {},
-    },
-    {
-        'nvim-lualine/lualine.nvim',
-        lazy = false,
-        priority = 1000,
     },
     {
         'stevearc/conform.nvim',
@@ -99,6 +89,9 @@ require("lazy").setup({
         event = "InsertEnter",
         config = true
     },
+    {
+        dir = "~/projects/lua/snovision/"
+    }
 }, {})
 
 -- ### Default plugins setups ###
