@@ -1,6 +1,25 @@
 -- Here we define all the plugins we will need
 require("lazy").setup({
     {
+      "folke/snacks.nvim",
+      priority = 1000,
+      lazy = false,
+      ---@type snacks.Config
+      opts = {
+        -- your configuration comes here
+        -- or leave it empty to use the default settings
+        -- refer to the configuration section below
+        bigfile = { enabled = true },
+        dashboard = { enabled = true },
+        indent = { enabled = true },
+        quickfile = { enabled = true },
+        scope = { enabled = true },
+        scroll = { enabled = true },
+        statuscolumn = { enabled = true },
+        words = { enabled = true },
+      },
+    },
+    {
         'stevearc/oil.nvim',
         ---@module 'oil'
         ---@type oil.SetupOpts
@@ -62,52 +81,6 @@ require("lazy").setup({
             }
         },
     },
-    {
-        "pwntester/octo.nvim",
-        cmd = "Octo",
-        opts = {
-            -- or "fzf-lua" or "snacks" or "default"
-            picker = "telescope",
-            -- bare Octo command opens picker of commands
-            enable_builtin = true,
-        },
-        keys = {
-            {
-                "<leader>oi",
-                "<CMD>Octo issue list<CR>",
-                desc = "List GitHub Issues",
-            },
-            {
-                "<leader>op",
-                "<CMD>Octo pr list<CR>",
-                desc = "List GitHub PullRequests",
-            },
-            {
-                "<leader>od",
-                "<CMD>Octo discussion list<CR>",
-                desc = "List GitHub Discussions",
-            },
-            {
-                "<leader>on",
-                "<CMD>Octo notification list<CR>",
-                desc = "List GitHub Notifications",
-            },
-            {
-                "<leader>os",
-                function()
-                    require("octo.utils").create_base_search_command { include_current_repo = true }
-                end,
-                desc = "Search GitHub",
-            },
-        },
-        dependencies = {
-            "nvim-lua/plenary.nvim",
-            "nvim-telescope/telescope.nvim",
-            -- OR "ibhagwan/fzf-lua",
-            -- OR "folke/snacks.nvim",
-            "nvim-tree/nvim-web-devicons", -- optional if file_panel.icons is a function
-        },
-    },
     'tpope/vim-sleuth',
     {
         'ThePrimeagen/harpoon',
@@ -129,11 +102,8 @@ require("lazy").setup({
         lazy = false,
         build = ':TSUpdate',
     },
-    {
-        'windwp/nvim-autopairs',
-        event = "InsertEnter",
-        config = true
-    },
+    { 'nvim-mini/mini.surround', version = false },
+    { 'nvim-mini/mini.pairs', version = false },
 }, {})
 
 -- ### Default plugins setups ###
