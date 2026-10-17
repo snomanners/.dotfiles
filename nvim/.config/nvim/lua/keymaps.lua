@@ -42,3 +42,7 @@ vim.keymap.set('n', '<leader>hg', function() require("harpoon"):list():select(5)
 -- Oil keymaps
 
 vim.keymap.set('n', '<leader>o', require('oil').toggle_float)
+
+-- Gitgutter keymaps
+
+vim.keymap.set('n', '<leader>b', "<cmd>Gitsigns blame<CR>")

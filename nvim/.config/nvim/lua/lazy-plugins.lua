@@ -8,6 +8,13 @@ require("lazy").setup({
         dependencies = { { "echasnovski/mini.icons", opts = {} } },
         event = "VeryLazy",
     },
+    "neovim/nvim-lspconfig",
+    {
+        "rachartier/tiny-inline-diagnostic.nvim",
+        event = "VeryLazy",
+        priority = 1000,
+        opts = {},
+    },
     {
         'nvim-lualine/lualine.nvim',
         dependencies = { 'nvim-tree/nvim-web-devicons' }
@@ -29,7 +36,13 @@ require("lazy").setup({
         lazy = true,
     },
     'lewis6991/gitsigns.nvim',
-    'dgox16/oldworld.nvim',
+    {
+        "wnkz/monoglow.nvim",
+        lazy = false,
+        priority = 1000,
+        opts = {},
+    },
+    { "Aejkatappaja/cendre" },
     {
         "folke/todo-comments.nvim",
         dependencies = { "nvim-lua/plenary.nvim" },
@@ -49,26 +62,58 @@ require("lazy").setup({
             }
         },
     },
+    {
+        "pwntester/octo.nvim",
+        cmd = "Octo",
+        opts = {
+            -- or "fzf-lua" or "snacks" or "default"
+            picker = "telescope",
+            -- bare Octo command opens picker of commands
+            enable_builtin = true,
+        },
+        keys = {
+            {
+                "<leader>oi",
+                "<CMD>Octo issue list<CR>",
+                desc = "List GitHub Issues",
+            },
+            {
+                "<leader>op",
+                "<CMD>Octo pr list<CR>",
+                desc = "List GitHub PullRequests",
+            },
+            {
+                "<leader>od",
+                "<CMD>Octo discussion list<CR>",
+                desc = "List GitHub Discussions",
+            },
+            {
+                "<leader>on",
+                "<CMD>Octo notification list<CR>",
+                desc = "List GitHub Notifications",
+            },
+            {
+                "<leader>os",
+                function()
+                    require("octo.utils").create_base_search_command { include_current_repo = true }
+                end,
+                desc = "Search GitHub",
+            },
+        },
+        dependencies = {
+            "nvim-lua/plenary.nvim",
+            "nvim-telescope/telescope.nvim",
+            -- OR "ibhagwan/fzf-lua",
+            -- OR "folke/snacks.nvim",
+            "nvim-tree/nvim-web-devicons", -- optional if file_panel.icons is a function
+        },
+    },
     'tpope/vim-sleuth',
     {
         'ThePrimeagen/harpoon',
         branch = "harpoon2",
         dependencies = { 'nvim-lua/plenary.nvim' },
         event = "VeryLazy",
-    },
-    {
-        -- LSP Configuration & Plugins
-        'neovim/nvim-lspconfig',
-        dependencies = {
-            { 'williamboman/mason.nvim', config = true },
-            'williamboman/mason-lspconfig.nvim',
-
-            -- Notifications and LSP progress messages, again, we'll see if it is actually useful
-            { 'j-hui/fidget.nvim',       opts = {} },
-
-            -- Configures lua language server for nvim config, guess it is useful, we'll see
-            'folke/neodev.nvim',
-        },
     },
     {
         'saghen/blink.cmp',
@@ -80,7 +125,7 @@ require("lazy").setup({
     {
         -- Highlight, edit, and navigate code
         'nvim-treesitter/nvim-treesitter',
-        branch="main",
+        branch = "main",
         lazy = false,
         build = ':TSUpdate',
     },
@@ -89,9 +134,6 @@ require("lazy").setup({
         event = "InsertEnter",
         config = true
     },
-    {
-        dir = "~/projects/lua/snovision/"
-    }
 }, {})
 
 -- ### Default plugins setups ###

@@ -41,25 +41,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
     end
 })
 
--- mason-lspconfig requires that these setup functions are called in this order
--- before setting up the servers.
-require('mason').setup()
-require('mason-lspconfig').setup()
-local servers = {
-    lua_ls = {
-        Lua = {
-            workspace = { checkThirdParty = false },
-            telemetry = { enable = false },
-        },
-    },
-}
-
 capabilities = require('blink.cmp').get_lsp_capabilities()
-
-require('mason-lspconfig').setup {
-    ensure_installed = vim.tbl_keys(servers),
-}
-
 vim.lsp.config("*", {
     capabilities = capabilities,
 })
@@ -89,4 +71,10 @@ vim.lsp.config('lua_ls', {
         Lua = {},
     },
 })
+
 vim.lsp.enable 'lua_ls'
+vim.lsp.enable 'ols'
+vim.lsp.enable 'ty'
+vim.lsp.enable 'ruff'
+vim.lsp.enable 'ts_ls'
+vim.lsp.enable 'angularls'
