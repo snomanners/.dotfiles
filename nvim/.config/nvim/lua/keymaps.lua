@@ -17,5 +17,4 @@ vim.keymap.set('n', '<leader>ws', '<cmd>split<CR>', { desc = 'Horizontal split' 
 vim.keymap.set('n', '<leader>wc', '<cmd>close<CR>', { desc = 'Close window' })
 vim.keymap.set('n', '<leader>wo', '<cmd>only<CR>', { desc = 'Keep only this window' })
 vim.keymap.set('n', '<leader>w=', '<C-w>=', { desc = 'Equalize windows' })
-vim.keymap.set('n', '<leader>bd', '<cmd>bdelete<CR>', { desc = 'Delete buffer (no force)' })
 vim.keymap.set('n', '<leader>de', vim.diagnostic.open_float, { desc = 'Diagnostic details' })

@@ -1,8 +1,9 @@
 vim.api.nvim_create_autocmd("FileType", {
     pattern = {"html", "css", "javascript", "typescript", "svelte"},
     callback = function()
-        vim.opt.shiftwidth = 2
-        vim.opt.tabstop = 2
+        vim.opt_local.shiftwidth = 2
+        vim.opt_local.tabstop = 2
+        vim.opt_local.softtabstop = 2
     end,
 })
 
@@ -22,8 +23,6 @@ require 'treesitter-setup'
 require 'blink-setup'
 
 require 'lsp'
-
-require 'lualine-setup'
 
 require('vim._core.ui2').enable({})
 

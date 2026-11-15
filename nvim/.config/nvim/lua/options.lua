@@ -12,7 +12,8 @@ vim.opt.shiftwidth = 4
 vim.opt.expandtab = true
 vim.opt.cmdheight = 0
 
-vim.opt.smartindent = true
+vim.o.splitright = true
+vim.o.splitbelow = true
 
 vim.wo.number = true
 vim.wo.relativenumber = true

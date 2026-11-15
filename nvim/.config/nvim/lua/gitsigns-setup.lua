@@ -6,6 +6,11 @@ require('gitsigns').setup({
         end
 
         map('n', '<leader>gb', gs.blame_line, 'Blame line')
+        map('n', '<leader>gB', gs.blame, 'Blame file')
+        map('n', '<leader>gS', gs.stage_buffer, 'Stage buffer')
+        map('n', '<leader>gR', gs.reset_buffer, 'Reset buffer')
+        map('n', '<leader>gq', function() gs.setqflist('all') end, 'All hunks to quickfix')
+        map({ 'o', 'x' }, 'ih', gs.select_hunk, 'Inside hunk')
         map('n', '<leader>gp', gs.preview_hunk, 'Preview hunk')
         map('n', '<leader>gs', gs.stage_hunk, 'Stage hunk')
         map('n', '<leader>gr', gs.reset_hunk, 'Reset hunk')

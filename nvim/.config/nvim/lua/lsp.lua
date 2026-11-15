@@ -42,11 +42,6 @@ vim.api.nvim_create_autocmd('LspAttach', {
     end
 })
 
-capabilities = require('blink.cmp').get_lsp_capabilities()
-vim.lsp.config("*", {
-    capabilities = capabilities,
-})
-
 -- reccomdede lua config in docs
 vim.lsp.config('lua_ls', {
     on_init = function(client)

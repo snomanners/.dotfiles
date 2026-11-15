@@ -75,6 +75,8 @@ M.opts = {
             { icon = nf(0xf15b), key = "n", desc = "New file", action = ":ene | startinsert" },
             { icon = nf(0xf0b0), key = "s", desc = "Grep project", action = fzf('live_grep') },
             { icon = nf(0xf1da), key = "r", desc = "Recent files", action = fzf('oldfiles') },
+            { icon = nf(0xf1d3), key = "g", desc = "Git", action = ":Neogit" },
+            { icon = nf(0xf0e2), key = "S", desc = "Restore session", action = function() require('persistence').load() end },
             { icon = nf(0xf013), key = "c", desc = "Config", action = fzf('files', { cwd = vim.fn.stdpath('config') }) },
             { icon = "󰒲 ", key = "L", desc = "Lazy", action = ":Lazy" },
             { icon = nf(0xf2f5), key = "q", desc = "Quit", action = ":qa" },
