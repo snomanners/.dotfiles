@@ -34,14 +34,7 @@ require("lazy").setup({
         -- or leave it empty to use the default settings
         -- refer to the configuration section below
         bigfile = { enabled = true },
-        dashboard = {
-          enabled = true,
-          preset = {
-            pick = function(cmd, opts)
-              return require('fzf-lua')[cmd](opts)
-            end,
-          },
-        },
+        dashboard = require('dashboard-setup').opts,
         indent = { enabled = true },
         quickfile = { enabled = true },
         scope = { enabled = true },
