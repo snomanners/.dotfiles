@@ -45,4 +45,4 @@ vim.keymap.set('n', '<leader>o', require('oil').toggle_float)
 
 -- Gitgutter keymaps
 
-vim.keymap.set('n', '<leader>b', "<cmd>Gitsigns blame<CR>")
+vim.keymap.set('n', '<leader>b', "<cmd>Gitsigns blame_line<CR>")

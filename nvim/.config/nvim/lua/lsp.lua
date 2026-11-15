@@ -10,7 +10,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
 
         vim.keymap.set('n', 'gd', require('fzf-lua').lsp_definitions, opt)
         vim.keymap.set('n', 'gr', require('fzf-lua').lsp_references, opt)
-        vim.keymap.set('n', 'gI', require('fzf-lua').lsp_implementations, opt)
+        vim.keymap.set('n', 'gi', require('fzf-lua').lsp_implementations, opt)
         vim.keymap.set('n', '<leader>D', require('fzf-lua').lsp_typedefs, opt)
         vim.keymap.set('n', '<leader>ds', require('fzf-lua').lsp_document_symbols, opt)
         vim.keymap.set('n', '<leader>ws', require('fzf-lua').lsp_live_workspace_symbols, opt)
@@ -72,9 +72,15 @@ vim.lsp.config('lua_ls', {
     },
 })
 
+vim.lsp.config('kotlin_lsp', {
+    cmd = {'kotlin-lsp', '--stdio'}
+})
+
 vim.lsp.enable 'lua_ls'
 vim.lsp.enable 'ols'
 vim.lsp.enable 'ty'
 vim.lsp.enable 'ruff'
 vim.lsp.enable 'ts_ls'
 vim.lsp.enable 'angularls'
+vim.lsp.enable 'gopls'
+vim.lsp.enable 'kotlin_lsp'

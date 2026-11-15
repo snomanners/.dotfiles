@@ -27,4 +27,4 @@ require 'lualine-setup'
 
 require('vim._core.ui2').enable({})
 
-vim.cmd("colorscheme monoglow")
+vim.cmd("colorscheme oldworld")

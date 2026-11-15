@@ -40,11 +40,3 @@ vim.o.foldlevelstart = 99
 vim.o.inccommand = 'split'
 vim.o.cursorline = true
 vim.o.confirm = true
-
-vim.diagnostic.config({
-  virtual_text = {
-    severity = {
-      max = vim.diagnostic.severity.ERROR,
-    },
-  },
-})

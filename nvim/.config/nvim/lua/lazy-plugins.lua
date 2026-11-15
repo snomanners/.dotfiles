@@ -1,6 +1,11 @@
 -- Here we define all the plugins we will need
 require("lazy").setup({
     {
+        "dgox16/oldworld.nvim",
+        lazy = false,
+        priority = 1000,
+    },
+    {
       "folke/snacks.nvim",
       priority = 1000,
       lazy = false,
@@ -14,7 +19,6 @@ require("lazy").setup({
         indent = { enabled = true },
         quickfile = { enabled = true },
         scope = { enabled = true },
-        scroll = { enabled = true },
         statuscolumn = { enabled = true },
         words = { enabled = true },
       },
@@ -108,3 +112,5 @@ require("lazy").setup({
 
 -- ### Default plugins setups ###
 require('gitsigns').setup()
+
+require('mini.pairs').setup()
