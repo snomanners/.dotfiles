@@ -1,22 +1,23 @@
 vim.api.nvim_create_autocmd('LspAttach', {
     group = vim.api.nvim_create_augroup('lsp-attach', { clear = true }),
     callback = function(event)
-        opt = {
-            buffer = event.buf
-        }
+        local function map(mode, lhs, rhs, desc)
+            vim.keymap.set(mode, lhs, rhs, { buffer = event.buf, desc = desc })
+        end
+        local function picker(name)
+            return function() require('fzf-lua')[name]() end
+        end
 
-        vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename, opt)
-        vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action, opt)
-
-        vim.keymap.set('n', 'gd', require('fzf-lua').lsp_definitions, opt)
-        vim.keymap.set('n', 'gr', require('fzf-lua').lsp_references, opt)
-        vim.keymap.set('n', 'gi', require('fzf-lua').lsp_implementations, opt)
-        vim.keymap.set('n', '<leader>D', require('fzf-lua').lsp_typedefs, opt)
-        vim.keymap.set('n', '<leader>ds', require('fzf-lua').lsp_document_symbols, opt)
-        vim.keymap.set('n', '<leader>ws', require('fzf-lua').lsp_live_workspace_symbols, opt)
-
-        vim.keymap.set('n', 'K', vim.lsp.buf.hover, opt)
-        vim.keymap.set('n', '<C-k>', vim.lsp.buf.signature_help, opt)
+        map('n', '<leader>cr', vim.lsp.buf.rename, 'Rename symbol')
+        map({ 'n', 'x' }, '<leader>ca', vim.lsp.buf.code_action, 'Code action')
+        map('n', 'gd', picker('lsp_definitions'), 'Definitions')
+        map('n', 'grr', picker('lsp_references'), 'References')
+        map('n', 'gri', picker('lsp_implementations'), 'Implementations')
+        map('n', 'grt', picker('lsp_typedefs'), 'Type definitions')
+        map('n', '<leader>cs', picker('lsp_document_symbols'), 'Document symbols')
+        map('n', '<leader>cS', picker('lsp_live_workspace_symbols'), 'Workspace symbols')
+        map('n', 'K', vim.lsp.buf.hover, 'Hover documentation')
+        map('n', '<leader>ck', vim.lsp.buf.signature_help, 'Signature help')
 
         -- The following two autocommands are used to highlight references of the
         -- word under your cursor when your cursor rests there for a little while.
